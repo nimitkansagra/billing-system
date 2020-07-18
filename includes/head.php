@@ -1,18 +1,34 @@
+<?php include 'dbconfig.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>LabSys</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style media="screen">
+        .badge{
+            font-size: 90%;
+        }
+        th{
+            font-size: 90%;
+        }
+        td{
+            font-size: 90%;
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -160,11 +176,28 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                <li class="nav-item has-treeview">
                                     <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Vendros</p>
+                                        <i class="nav-icon fas fa-users"></i>
+                                        <p>
+                                            Vendors
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="addvendor.php" class="nav-link">
+                                                <i class="fas fa-plus-circle nav-icon"></i>
+                                                <p>Add Vendros</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="vendors.php" class="nav-link">
+                                                <i class="fas fa-list nav-icon"></i>
+                                                <p>View vendors</p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
