@@ -2,145 +2,162 @@
 <html>
 <head>
 	<title>customer's bill</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<style>
-	body {
-     text-align: center;
-     padding: 5% 20%;
-   }
-	table {
-     border: 4px solid black;
-		 border-collapse: collapse;
-   }
-	 td,th{
-		 border: 1px solid black;
-		 font-size: 20px;
-		 border-collapse: collapse;
-	 }
+	
+
 	</style>
 </head>
 
 <body>
-	<table>
-	<tr>
-		<td colspan="2">Original for Receiver</td>
-		<td colspan="2">Duplicate for provider</td>
-	</tr>
-	<tr>
-		<td colspan="4" style="font-size:30px; text-align:center;"><b>TAX INVOICE</b></td>
-	</tr>
-	<tr>
-		<td><b>Invoice No.:</b></td>
-		<td></td>
-		<td><b>Date: </b></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td colspan="4"></td>
-	</tr>
-	<tr>
-		<td rowspan="3" colspan="1"></td>
-		<td rowspan="1" colspan="1"><b>Service Provider</b></td>
-		<td rowspan="3" colspan="1"></td>
-		<td rowspan="1" colspan="1"><b>Service Receiver</b></td>
-	</tr>
-	<tr>
-		<td rowspan="1" colspan="1"><b>#Name of Service Provider</b></td>
-		<td rowspan="1" colspan="1"><b>#Name of Service Receiver</b></td>
-	</tr>
-	<tr>
-		<td rowspan="1" colspan="1">#Address of Service Provider</td>
-		<td rowspan="1" colspan="1">#Address of Service Receiver</td>
-	</tr>
-	<tr>
-		<td><b>GSTIN No.</b></td>
-		<td></td>
-		<td><b>GSTIN No.</b></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td><b>State Name</b></td>
-		<td></td>
-		<td><b>State Name</b></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td><b>State Code</b></td>
-		<td></td>
-		<td><b>State Code</b></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td colspan="4"></td>
-	</tr>
-	<tr>
-		<td><b>Sr No</b></td>
-		<td><b>Description of Services</b></td>
-		<td><b>HSN/SAC code</b></td>
-		<td><b>Amount</b></td>
-	</tr>
-	<tr>
-		<td>##</td>
-		<td>##</td>
-		<td>##</td>
-		<td>##</td>
-	</tr>
-	<tr>
-		<td rowspan="5" colspan="2"></td>
-		<td>CGST (9%)</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>SGST (9%)</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>IGST (18%)</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>Round off</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td><b>TOTAL</b></td>
-		<td><b></b></td>
-	</tr>
-	<tr>
-		<td><b>Amount in word</b></td>
-		<td>#####</td>
-		<td colspan="2" style="border:0;"><b>Company Bank Details</b></td>
-	</tr>
-	<tr>
-		<td><b>Company Pan</b></td>
-		<td>#####</td>
-		<td style="border:0;"><b>Bank Name:</b></td>
-		<td style="border:0;">#####</td>
-	</tr>
-	<tr>
-		<td colspan="2" style="border:0;"><b>Terms</b></td>
-		<td style="border:0;"><b>A/C No :</b></td>
-		<td style="border:0;">#####</td>
-	</tr>
-	<tr>
-		<td colspan="2" style="border:0;">#terms</td>
-		<td style="border:0;"><b>IFSC Code:</b></td>
-		<td style="border:0;">#####</td>
-	</tr>
-	<tr>
-		<td colspan="2"><b>Customer Signature</b></td>
-		<td colspan="2"><b>For biochrom Analytical lab</b></td>
-	</tr>
-	<tr>
-		<td colspan="2">#Signature</td>
-		<td colspan="2">#Signature</td>
-	</tr>
-	<tr>
-		<td colspan="2"><b>Contact No-##########</b></td>
-		<td colspan="2"><b>Email ID- #abc@xyz.com</b></td>
-	</tr>
-	<tr>
-		<td colspan="4" style="text-align:center;">THANK YOU :) </td>
-	<tr>
-	</table>
+	<div class="container">
+		<input type="button" id="btnExport" value="Download Bill" />
+		<table id="billGenerate" class="table table-bordered">
+			<tr>
+				<td colspan="2">Original for Receiver</td>
+				<td colspan="2">Duplicate for provider</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="font-size:30px; text-align:center;"><b>TAX INVOICE</b></td>
+			</tr>
+			<tr>
+				<td><b>Invoice No.:</b></td>
+				<td></td>
+				<td><b>Date: </b></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="4"></td>
+			</tr>
+			<tr>
+				<td rowspan="3" colspan="1"></td>
+				<td rowspan="1" colspan="1"><b>Service Provider</b></td>
+				<td rowspan="3" colspan="1"></td>
+				<td rowspan="1" colspan="1"><b>Service Receiver</b></td>
+			</tr>
+			<tr>
+				<td rowspan="1" colspan="1"><b>#Name of Service Provider</b></td>
+				<td rowspan="1" colspan="1"><b>#Name of Service Receiver</b></td>
+			</tr>
+			<tr>
+				<td rowspan="1" colspan="1">#Address of Service Provider</td>
+				<td rowspan="1" colspan="1">#Address of Service Receiver</td>
+			</tr>
+			<tr>
+				<td><b>GSTIN No.</b></td>
+				<td></td>
+				<td><b>GSTIN No.</b></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>State Name</b></td>
+				<td></td>
+				<td><b>State Name</b></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>State Code</b></td>
+				<td></td>
+				<td><b>State Code</b></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="4"></td>
+			</tr>
+			<tr>
+				<td><b>Sr No</b></td>
+				<td><b>Description of Services</b></td>
+				<td><b>HSN/SAC code</b></td>
+				<td><b>Amount</b></td>
+			</tr>
+			<tr>
+				<td>##</td>
+				<td>##</td>
+				<td>##</td>
+				<td>##</td>
+			</tr>
+			<tr>
+				<td rowspan="5" colspan="2"></td>
+				<td>CGST (9%)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>SGST (9%)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>IGST (18%)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Round off</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>TOTAL</b></td>
+				<td><b></b></td>
+			</tr>
+			<tr>
+				<td><b>Amount in word</b></td>
+				<td>#####</td>
+				<td colspan="2" style="border:0;"><b>Company Bank Details</b></td>
+			</tr>
+			<tr>
+				<td><b>Company Pan</b></td>
+				<td>#####</td>
+				<td style="border:0;"><b>Bank Name:</b></td>
+				<td style="border:0;">#####</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="border:0;"><b>Terms</b></td>
+				<td style="border:0;"><b>A/C No :</b></td>
+				<td style="border:0;">#####</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="border:0;">#terms</td>
+				<td style="border:0;"><b>IFSC Code:</b></td>
+				<td style="border:0;">#####</td>
+			</tr>
+			<tr>
+				<td colspan="2"><b>Customer Signature</b></td>
+				<td colspan="2"><b>For biochrom Analytical lab</b></td>
+			</tr>
+			<tr>
+				<td colspan="2">#Signature</td>
+				<td colspan="2">#Signature</td>
+			</tr>
+			<tr>
+				<td colspan="2"><b>Contact No-##########</b></td>
+				<td colspan="2"><b>Email ID- #abc@xyz.com</b></td>
+			</tr>
+			<tr>
+				<td colspan="4" style="text-align:center;">THANK YOU :) </td>
+			<tr>
+			</table>
+	</div>
 </body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script type="text/javascript">
+	$("body").on("click", "#btnExport", function () {
+		html2canvas($('#billGenerate')[0], {
+			onrendered: function (canvas) {
+				var data = canvas.toDataURL();
+				var docDefinition = {
+					content: [{
+						image: data,
+						width: 500
+					}]
+				};
+				pdfMake.createPdf(docDefinition).download("Bill.pdf");
+			}
+		});
+	});
+</script>
 </html>
