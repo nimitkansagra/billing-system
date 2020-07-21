@@ -52,7 +52,7 @@ include('includes/head.php');
                                                 </td>
                                                 <td><?php echo $row['name']; ?></td>
                                                 <td><?php echo $row['product_group']; ?></td>
-                                                <td><?php echo $row['product_title']; ?></td>
+                                                <td><?php echo $row['product_type']; ?></td>
 
                                                 <td>
                                                     <a href="editvendor.php?vendor_id=<?php echo $row['id'];?>"><i class="fas fa-edit text-primary"></i></a>
