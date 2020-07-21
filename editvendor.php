@@ -5,11 +5,7 @@
     if (isset($_REQUEST['vendor_id'])) {
         $vendor_id = $_REQUEST['vendor_id'];
     }
-    /*elseif (isset($_POST['vendor_id'])) {
-        $GLOBALS['vendor_id'] = $_POST['vendor_id'];
-    }*/
-    //$referer = $_SERVER['HTTP_REFERER'];
-    //echo $referer."<br>";
+
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -23,7 +19,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">Vendors</li>
-                        <li class="breadcrumb-item active">Add New</li>
+                        <li class="breadcrumb-item active">Update Vendor</li>
                     </ol>
                 </div>
             </div>
@@ -91,7 +87,7 @@
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <a href="vendors.php" class="btn btn-secondary">View Vendors</a>
-                            <button type="submit" class="btn btn-success float-right" name="submit">Add Vendor</button>
+                            <button type="submit" class="btn btn-success float-right" name="submit">Update Vendor</button>
                         </div>
                         <!-- /.card-footer -->
                         </form>

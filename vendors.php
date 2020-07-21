@@ -60,9 +60,8 @@ include('includes/head.php');
                                                 <td><?php echo $row['contact_person']; ?></td>
                                                 <td><?php echo $row['address']; ?></td>
                                                 <td>
-                                                    <a href="editvendor.php?vendor_id=<?php echo $row['id'];?>">
-                                                        <i class="fas fa-minus-circle text-danger"></i>
-                                                    </a>
+                                                    <a href="editvendor.php?vendor_id=<?php echo $row['id'];?>"><i class="fas fa-edit text-primary"></i></a>
+                                                    <a href="deletevendor.php?vendor_id=<?php echo $row['id'];?>"><i class="fas fa-trash text-danger"></i></a>
                                                 </td>
                                             </tr>
                                             <?php
