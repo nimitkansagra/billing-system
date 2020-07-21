@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `billing_system`
+--
 --
 
 -- --------------------------------------------------------
@@ -31,7 +31,7 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `product_group` text NOT NULL,
-  `product_type` text NOT NULL
+  `product_type` text NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -42,7 +42,8 @@ CREATE TABLE `products` (
 
 CREATE TABLE `product_group` (
   `id` int(11) NOT NULL,
-  `title` text NOT NULL
+  `title` text NOT NULL,
+   FOREIGN KEY(title) REFERENCES products(product_group)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -53,7 +54,8 @@ CREATE TABLE `product_group` (
 
 CREATE TABLE `product_type` (
   `id` int(11) NOT NULL,
-  `title` text NOT NULL
+  `title` text NOT NULL,
+  FOREIGN KEY(title) REFERENCES products(product_type)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
