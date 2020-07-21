@@ -43,11 +43,35 @@ include 'includes/head.php';
                                         </div>
                                         <div class="form-group">
                                             <label for="inputProjectLeader">Product Group</label>
-                                            <input type="text" class="form-control" name="p_group" required>
+                                            <select class="form-control id="p_group" name="p_group">
+                                              <option> select</option>
+                                              <?php
+                                                $group = "SELECT title from product_group";
+                                                $result = mysqli_query($con, $group);
+                                                $num_results = mysqli_num_rows($result);
+                                                for ($i=0;$i<$num_results;$i++) {
+                                                  $row = mysqli_fetch_array($result);
+                                                  $title = $row['title'];
+                                                  echo '<option value="' .$title. '">' .$title. '</option>';
+                                                }
+                                              ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputProjectLeader">Product Type</label>
-                                            <input type="text" class="form-control" name="p_type" required>
+                                            <select class="form-control id="p_group" name="p_group">
+                                              <option> select</option>
+                                              <?php
+                                                $group = "SELECT title from product_type";
+                                                $result = mysqli_query($con, $group);
+                                                $num_results = mysqli_num_rows($result);
+                                                for ($i=0;$i<$num_results;$i++) {
+                                                  $row = mysqli_fetch_array($result);
+                                                  $title = $row['title'];
+                                                  echo '<option value="' .$title. '">' .$title. '</option>';
+                                                }
+                                              ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -60,6 +84,7 @@ include 'includes/head.php';
                             <!-- /.card-footer -->
                         </form>
                     </div>
+
                     <?php
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if(isset($_POST['submit'])){
@@ -68,9 +93,6 @@ include 'includes/head.php';
                                 $p_type = $_POST['p_type'];
                                 $sql = "INSERT INTO products (name,product_group,product_type)
                                 VALUES ('$p_name','$p_group','$p_type')";
-
-                                $sql_Group = "INSERT INTO product_group (title) VALUES ('$p_group')";
-                                $sql_Type = "INSERT INTO product_type (title) VALUES ('$p_type')";
                                 //echo $sql;
                                 if(mysqli_query($con, $sql)) {
                                     echo "<script>alert('Data Inserted');</script>";
@@ -101,5 +123,6 @@ include 'includes/head.php';
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+
 </body>
 </html>
