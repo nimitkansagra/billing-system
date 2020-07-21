@@ -78,7 +78,7 @@ include 'includes/head.php';
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <a href="#" class="btn btn-secondary">View Products</a>
+                                <a href="products.php" class="btn btn-secondary">View Products</a>
                                 <button type="submit" class="btn btn-success float-right" name="submit"> Add </button>
                             </div>
                             <!-- /.card-footer -->
