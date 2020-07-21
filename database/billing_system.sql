@@ -31,7 +31,9 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `product_group` text NOT NULL,
-  `product_type` text NOT NULL 
+  `product_type` text NOT NULL,
+   FOREIGN KEY(product_group) REFERENCES product_group(title),
+   FOREIGN KEY(product_type) REFERENCES product_type(title) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -42,8 +44,7 @@ CREATE TABLE `products` (
 
 CREATE TABLE `product_group` (
   `id` int(11) NOT NULL,
-  `title` text NOT NULL,
-   FOREIGN KEY(title) REFERENCES products(product_group)
+  `title` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -54,8 +55,7 @@ CREATE TABLE `product_group` (
 
 CREATE TABLE `product_type` (
   `id` int(11) NOT NULL,
-  `title` text NOT NULL,
-  FOREIGN KEY(title) REFERENCES products(product_type)
+  `title` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
