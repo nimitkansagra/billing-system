@@ -36,12 +36,12 @@ include 'includes/head.php';
                         <form  action="<?php  echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
+                                    
+                                        <div class="form-group col-md-4">
                                             <label for="inputName">Product Name</label>
                                             <input type="text" class="form-control" name="p_name" required>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group col-md-4">
                                             <label for="inputProjectLeader">Product Group</label>
                                             <select class="form-control id="p_group" name="p_group">
                                               <option> select</option>
@@ -57,7 +57,7 @@ include 'includes/head.php';
                                               ?>
                                             </select>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group col-md-4">
                                             <label for="inputProjectLeader">Product Type</label>
                                             <select class="form-control id="p_group" name="p_group">
                                               <option> select</option>
@@ -73,7 +73,6 @@ include 'includes/head.php';
                                               ?>
                                             </select>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->

@@ -36,7 +36,7 @@ include 'includes/head.php';
                         <form  action="<?php  echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="inputName">Product Type</label>
                                             <input type="text" class="form-control" name="type" required>

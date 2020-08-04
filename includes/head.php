@@ -199,11 +199,74 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item has-treeview">
                                     <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Products</p>
+                                        <i class="nav-icon fas fa-box"></i>
+                                        <p>
+                                            Product Groups
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
                                     </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="addproductgroup.php" class="nav-link">
+                                                <i class="fas fa-plus-circle nav-icon"></i>
+                                                <p>Add Product</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="productgroups.php" class="nav-link">
+                                                <i class="fas fa-list nav-icon"></i>
+                                                <p>View Product</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-box"></i>
+                                        <p>
+                                            Product Types
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="addproducttype.php" class="nav-link">
+                                                <i class="fas fa-plus-circle nav-icon"></i>
+                                                <p>Add Product Type</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="producttypes.php" class="nav-link">
+                                                <i class="fas fa-list nav-icon"></i>
+                                                <p>View Product Type</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-box"></i>
+                                        <p>
+                                            Products
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="addproduct.php" class="nav-link">
+                                                <i class="fas fa-plus-circle nav-icon"></i>
+                                                <p>Add Product</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="products.php" class="nav-link">
+                                                <i class="fas fa-list nav-icon"></i>
+                                                <p>View Product</p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
@@ -211,12 +274,7 @@
                                         <p>Product Tests</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Product Group</p>
-                                    </a>
-                                </li>
+                                
                             </ul>
                         </li>
                         <li class="nav-item">
